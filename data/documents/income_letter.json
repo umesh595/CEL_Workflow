@@ -1,0 +1,11 @@
+{
+  "document_type": "income_letter",
+  "description": "An income verification letter uploaded by an applicant.",
+  "fields": [
+    {"name": "document_date", "type": "timestamp", "description": "Date the letter was signed/issued"},
+    {"name": "monthly_income", "type": "number", "description": "Stated gross monthly income"},
+    {"name": "issuing_agency", "type": "string", "description": "Name of the agency/employer issuing the letter"},
+    {"name": "currency", "type": "string", "description": "Currency the stated income is in"}
+  ],
+  "rule_definitions_file": "rules/income_letter_rules.json"
+}

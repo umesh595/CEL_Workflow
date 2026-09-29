@@ -1,0 +1,62 @@
+[
+  {
+    "label": "PASS - all rules satisfied",
+    "application": {},
+    "document": {
+      "document_date": "2026-08-01T00:00:00Z",
+      "monthly_income": 5200,
+      "issuing_agency": "State Dept. of Revenue",
+      "currency": "USD"
+    }
+  },
+  {
+    "label": "FAIL date_within_range - 91 days old, one day past the 90-day limit",
+    "application": {},
+    "document": {
+      "document_date": "2026-06-30T00:00:00Z",
+      "monthly_income": 5200,
+      "issuing_agency": "State Dept. of Revenue",
+      "currency": "USD"
+    }
+  },
+  {
+    "label": "BOUNDARY date_within_range - exactly 90 days old, must PASS (inclusive limit)",
+    "application": {},
+    "document": {
+      "document_date": "2026-07-01T00:00:00Z",
+      "monthly_income": 5200,
+      "issuing_agency": "State Dept. of Revenue",
+      "currency": "USD"
+    }
+  },
+  {
+    "label": "BOUNDARY positive_monthly_income - exactly 0, must FAIL (strictly greater than 0)",
+    "application": {},
+    "document": {
+      "document_date": "2026-08-01T00:00:00Z",
+      "monthly_income": 0,
+      "issuing_agency": "State Dept. of Revenue",
+      "currency": "USD"
+    }
+  },
+  {
+    "label": "FAIL issuing_agency_present - field left empty",
+    "application": {},
+    "document": {
+      "document_date": "2026-08-01T00:00:00Z",
+      "monthly_income": 5200,
+      "issuing_agency": "",
+      "currency": "USD"
+    }
+  },
+  {
+    "label": "FAIL currency_is_usd - stated in a different currency",
+    "application": {},
+    "document": {
+      "document_date": "2026-08-01T00:00:00Z",
+      "monthly_income": 5200,
+      "issuing_agency": "State Dept. of Revenue",
+      "currency": "CAD"
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "label": "PASS - all rules satisfied",
+    "application": {"employer_name": "Acme Corp"},
+    "document": {
+      "document_date": "2026-08-15T00:00:00Z",
+      "ytd_gross": 42000,
+      "employer_name": "Acme Corp",
+      "pay_period_end": "2026-08-14"
+    }
+  },
+  {
+    "label": "FAIL date_within_range - 61 days old, one day past the 60-day limit",
+    "application": {"employer_name": "Acme Corp"},
+    "document": {
+      "document_date": "2026-07-30T00:00:00Z",
+      "ytd_gross": 42000,
+      "employer_name": "Acme Corp",
+      "pay_period_end": "2026-07-29"
+    }
+  },
+  {
+    "label": "BOUNDARY date_within_range - exactly 60 days old, must PASS (inclusive limit)",
+    "application": {"employer_name": "Acme Corp"},
+    "document": {
+      "document_date": "2026-07-31T00:00:00Z",
+      "ytd_gross": 42000,
+      "employer_name": "Acme Corp",
+      "pay_period_end": "2026-07-30"
+    }
+  },
+  {
+    "label": "BOUNDARY positive_ytd_gross - exactly 0, must FAIL (strictly greater than 0)",
+    "application": {"employer_name": "Acme Corp"},
+    "document": {
+      "document_date": "2026-08-15T00:00:00Z",
+      "ytd_gross": 0,
+      "employer_name": "Acme Corp",
+      "pay_period_end": "2026-08-14"
+    }
+  },
+  {
+    "label": "FAIL employer_match - employer name does not match the application",
+    "application": {"employer_name": "Acme Corp"},
+    "document": {
+      "document_date": "2026-08-15T00:00:00Z",
+      "ytd_gross": 42000,
+      "employer_name": "Beta LLC",
+      "pay_period_end": "2026-08-14"
+    }
+  },
+  {
+    "label": "FAIL pay_period_end_present - field left empty",
+    "application": {"employer_name": "Acme Corp"},
+    "document": {
+      "document_date": "2026-08-15T00:00:00Z",
+      "ytd_gross": 42000,
+      "employer_name": "Acme Corp",
+      "pay_period_end": ""
+    }
+  }
+]

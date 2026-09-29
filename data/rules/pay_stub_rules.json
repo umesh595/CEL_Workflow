@@ -1,0 +1,29 @@
+[
+  {
+    "rule_id": "date_within_range",
+    "rule_type": "within_days",
+    "field": "document_date",
+    "value": 60,
+    "description": "Pay stub must be dated within the last 60 days"
+  },
+  {
+    "rule_id": "positive_ytd_gross",
+    "rule_type": "greater_than",
+    "field": "ytd_gross",
+    "value": 0,
+    "description": "Year-to-date gross earnings must be a positive number"
+  },
+  {
+    "rule_id": "employer_match",
+    "rule_type": "matches_field",
+    "field": "employer_name",
+    "compare_to": "application.employer_name",
+    "description": "Employer name on the pay stub must match the employer name on the application"
+  },
+  {
+    "rule_id": "pay_period_end_present",
+    "rule_type": "non_empty",
+    "field": "pay_period_end",
+    "description": "Pay period end date must be present on the document"
+  }
+]

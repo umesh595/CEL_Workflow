@@ -1,0 +1,29 @@
+[
+  {
+    "rule_id": "date_within_range",
+    "rule_type": "within_days",
+    "field": "document_date",
+    "value": 90,
+    "description": "Income letter must be dated within the last 90 days"
+  },
+  {
+    "rule_id": "positive_monthly_income",
+    "rule_type": "greater_than",
+    "field": "monthly_income",
+    "value": 0,
+    "description": "Stated monthly income must be a positive number"
+  },
+  {
+    "rule_id": "issuing_agency_present",
+    "rule_type": "non_empty",
+    "field": "issuing_agency",
+    "description": "Issuing agency/employer name must be present"
+  },
+  {
+    "rule_id": "currency_is_usd",
+    "rule_type": "equals",
+    "field": "currency",
+    "value": "USD",
+    "description": "Stated income currency must be USD"
+  }
+]

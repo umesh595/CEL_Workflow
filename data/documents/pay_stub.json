@@ -1,0 +1,11 @@
+{
+  "document_type": "pay_stub",
+  "description": "A single pay stub uploaded by an applicant.",
+  "fields": [
+    {"name": "document_date", "type": "timestamp", "description": "Date the pay stub was issued"},
+    {"name": "ytd_gross", "type": "number", "description": "Year-to-date gross earnings"},
+    {"name": "employer_name", "type": "string", "description": "Employer name printed on the pay stub"},
+    {"name": "pay_period_end", "type": "string", "description": "End date of the pay period, as printed"}
+  ],
+  "rule_definitions_file": "rules/pay_stub_rules.json"
+}

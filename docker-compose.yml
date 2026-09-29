@@ -1,0 +1,9 @@
+services:
+  cel-workflow:
+    build: .
+    container_name: cel-workflow
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
